@@ -1,0 +1,30 @@
+\chapter{Amélioration technique de RENEWAL}
+\label{sec:Amélioration technique de RENEWAL}
+
+\section{Analyse ergonomique}
+
+L'ensemble des écrans de l'application ont été réfléchi pour rendre l'expérience le plus naturel possible. Le nombre d'article de la liste de recommandation s'adapte à la taille de l'écran pour afficher le maximum d'article tout en gardant une bonne visibilité. A l'avenir, l'application sera disponible sur tablette et iPad, une de nos pistes de réflexion est la séparation de l'écran en deux lorsqu'une tablette est en orientation paysage. A gauche, sera disponible la liste d'article issus de la recommendation diverse et à droite la webview permettant la lecture d'un article.
+
+Le code couleur, le style et la disposition actuel des éléments est le fruit d'une reflexion entre moi-même et J. HAY. Nous avons fait le choix de définir un style cohérent qui respecte l'ensemble des besoins énoncés au début du stage et lister dans le backlog de l'application. 
+
+\section{Mise en favori d'un article}
+
+Dans la liste d'article issu de la recommandation d'articles diverses, il est possible d'effectuer trois actions. Evidemment un clique sur l'article permet la lecture d'un article simplement. Une petite croix à droite du titre permet de griser l'article et donc d'exprimer clairement que l'utilisateur n'est pas satisfait de la recommendation de cet article. Une icone à gauche de l'article permet de mettre en favori un article. L'ensemble des articles mis en favoris sont regroupés au sein d'un écran disponible dans le menu latéral de l'application. Techniquement, les articles dans cette partie sont sauvegardés dans une base de donnée interne SQLite permettant à l'utilisateur de garder continuellement les articles mis en favoris et de trier les articles selon leur date de mise en favori. 
+
+\section{Gestion de l'historique}
+
+La partie historique est encore en reflexion, à l'avenir cette partie de l'application mettra en avant la structure arborescente des articles. L'idée est de regrouper l'historique par jour et par navigation d'article en article. Concrétement si à un jour X un utilisateur ne lit qu'un unique article, l'historique de cette journée ne montrera qu'un unique article. Mais si à un jour Y, l'utilisateur navigue d'articles complémentaires en articles complémentaires, l'historique de cette journée devra montrer la structure arborescente déssinée horizontalement. Cette partie de l'application, est en cours de reflexion, il faut prendre en compte la structure aborescente et la visibilité de cette structure. Dessiner un arbre au sein de l'application n'est pas une chose aisée et d'après mes recherches aucun membre de la communauté React-Native n'a tenté l'expérience.  
+
+\section{La norme i18n}
+
+L'internationalisation d'un logiciel (abrégé en i18n, où 18 représente le nombre de caractères entre le i et le n dans « internationalisation »), regroupe les bonnes pratiques en terme d'internationalisation et permettent aux développeurs et aux programmeurs de logiciels d'écrire des applications de meilleures qualités qui contribueront à une localisation ultérieure plus efficace.Et grâce à une gestion très précoce des questions d'internationalisation et de localisation au cours de la conception de logiciels. 
+
+\section{La mise en avant du concept}
+
+Lors de la première ouverture de l'application, il est nécessaire de montrer à l'utilisateur avec des mots simples le concept de Renewal. Le but étant de se distinguer des applications qui agissent seulement comme un agrégateur de contenu comme Google News par exemple et de mettre fortement en avant l'aspect recommandation d'article. Mais aussi faire comprendre à l'utilisateur qu'il est important pour nous et les équipes de recherche via leurs algorithmes de recommandations d'avoir un accès à minima à un de leurs réseaux sociaux. Pour la réalisation de cette partie, j'ai regardé comment les autres applications déjà installées sur un store expliquent leur concept comme notamment l'application Slack ou discord. Après une courte analyse, j'ai compris que pour avoir une information percutante il faut une image centrale avec juste un seul mot mis en avant. Ainsi, j'ai crée 3 pages, la première étant les remerciements adréssés à l'utilisateur pour avoir téléchargé l'application, la seconde mettant en avant le coté recommandations et la dernière page insitant l'utilisateur à se connecter via un réseau social avec le moyen d'ouvrir une page complémentaire permettant d'en savoir plus sur l'utilisation de ses données. 
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "lri-report"
+%%% End: 

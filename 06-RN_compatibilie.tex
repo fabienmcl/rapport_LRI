@@ -1,0 +1,24 @@
+\chapter{React-Native et la compatibilité}
+\label{sec:React-Native et la compatibilité}
+
+
+
+
+\section{La compatibilité Android / iOS }
+
+
+L’énorme avantage de React Native est l’insertion rapide de « module » externe développé par des tiers et souvent maintenu par la communauté très active de React Native sur GitHub. Le développement d’un module externe installable pour tout projet React Native demande de développer une partie du code spécifique à Android et à IOS. Au cours de mon développement, j’ai eu besoin de différents modules extrêmement spécifique, parfois le parfait module était disponible uniquement avec une des deux plateformes notamment parce que React Native est un Framework extrêmement jeune encore en version 0.55 et fait appel à des composants natifs de chaque plateforme. L’appel de différente fonction change encore régulièrement et une façon de procéder qui était valable il y a un an n’est parfois plus viable aujourd’hui. Certains modules non maintenus sont donc devenu inutilisable avec le temps. Ce changement de nomenclature est parfaitement compréhensible pour un Framework n’étant pas encore disponible en version 1 bien que parfaitement viable actuellement pour développer un large panel d’application donc les plus connues sont Uber, Skype ou Facebook. 
+La majorité des modules développés par des tiers sont parfaitement compatibles avec Android et IOS, cependant je me suis souvent retrouvé face à des modules pour mon application qui étaient compatibles seulement avec IOS ou moins souvent avec des manipulations supplémentaires pour rendre le code compatible avec Android. Cependant, je me suis souvent retrouvé à devoir retravailler mon code pour faire fonctionner mon application sous Android. L’explication est simple, les appels des fonctions ou accès à des composants changent régulièrement d’une version d’Android à une autre. Une application développée en React-Native et le SDK expo.io offre énormément d’avantage mais la suppression des dossiers spécifiques à Android et IOS a eu certains inconveniants au cours de mon développement notamment celui de ne pas pouvoir insérer du code en Java pour Android par exemple. Ainsi, je ne pouvais faire que du code spécifique à chaque OS seulement en JavaScript et donc avec un impact limité par rapport à du code natif.  Je peux citer plusieurs exemples comme le stockage des données en local dont il m'a fallu tout changer pour rendre le code totalement asynchrone et compatible avec Android mais aussi le code du composant lié à la liste des articles dont l’évolution de React Native et Android à rendu incompatible. Testant spécifiquement le code développé sur un terminal IOS, j’ai tardé à tester mon application sur Android et donc le changement du composant lié à la liste d’articles est survenu tardivement et à entrainé du retard dans mon travail. Depuis cette erreur, j’ai compris que pour le développement d’une application cross-plateforme, il est nécessaire de pouvoir tester régulièrement l’application sur les différentes plateformes visées sous peine d’obtenir une dette technique qui s’accumule.  
+
+\section{Publication de l'application}
+
+Il est possible de partager notre projet publié via Expo Client et sur notre profil expo.io mais dans le cadre du projet Renewal il est nécessaire d'envoyer une application autonome aux magasins d'application d'Apple et de Google. La soumission à ces magasins implique des exigences et des normes de qualité plus élevées que le partage d'un projet avec d'autre développeur, car cela rend notre application disponible via une plateforme de distribution beaucoup plus large. Il est utile de jeter un coup d'œil sur les rejets communs d'applications. Les binaires peuvent être rejetés pour avoir des icônes mal formatées par exemple. Surtout dans le cas d'Apple où les règles d’acceptation changent régulièrement. L’ensemble des règles à respecter pour réussir la soumission d’une application sur l’Apple Store s’étoffe de plus en plus et à tendance à être fastidieuse et incohérente. Apple peut rejeter votre application si les éléments ne s'affichent pas correctement sur un iPad et même si votre application ne cible pas le forme factor de l'iPad. Expo ne peut pas garantir que notre projet sera accepté par l'une ou l'autre plateforme, et c’est à nous de mettre en conformité le comportement de notre application. Cependant, les applications Expo sont des applications natives et se comportent comme toutes les autres applications donc ne demande pas d'adaptation particulière. Par contre, Expo facilite la mise à jour de notre application, puisqu’il est possible de mettre à jour l’application dès son ouverture sans devoir mettre à jour l’application dans le magasin d’application. 
+
+
+
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "lri-report"
+%%% End: 
